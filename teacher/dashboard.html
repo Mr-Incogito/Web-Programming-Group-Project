@@ -1,0 +1,323 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Teacher Dashboard | Knox College</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body class="dashboard-page">
+
+    <!-- Dashboard Header -->
+    <header class="dashboard-header">
+
+        <div class="dashboard-brand">
+            KNOX <span>COLLEGE</span>
+        </div>
+
+        <div class="dashboard-user">
+            <span id="welcomeUser">Teacher</span>
+            <button onclick="logoutUser()">Logout</button>
+        </div>
+
+    </header>
+
+
+    <!-- Dashboard Layout -->
+    <div class="dashboard-layout">
+
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+
+            <h3>Teacher Panel</h3>
+
+            <nav>
+                <a href="#overview" class="sidebar-link active">
+                    Dashboard Overview
+                </a>
+
+                <a href="#subjects" class="sidebar-link">
+                    My Subjects
+                </a>
+
+                <a href="#grades" class="sidebar-link">
+                    Grade Management
+                </a>
+
+                <a href="#reports" class="sidebar-link">
+                    Report Cards
+                </a>
+            </nav>
+
+        </aside>
+
+
+        <!-- Main Content -->
+        <main class="dashboard-content">
+
+            <!-- Overview -->
+            <section id="overview">
+
+                <div class="dashboard-heading">
+
+                    <div>
+                        <p>INSTRUCTOR PANEL</p>
+                        <h1>Teacher Dashboard</h1>
+                        <span>Manage your subjects and student academic records.</span>
+                    </div>
+
+                </div>
+
+
+                <!-- Statistics -->
+                <div class="stats-container">
+
+                    <article class="stat-card">
+                        <h3>Assigned Subjects</h3>
+                        <p id="totalSubjects">0</p>
+                    </article>
+
+                    <article class="stat-card">
+                        <h3>Students</h3>
+                        <p id="totalTeacherStudents">0</p>
+                    </article>
+
+                    <article class="stat-card">
+                        <h3>Grade Records</h3>
+                        <p id="totalTeacherGrades">0</p>
+                    </article>
+
+                    <article class="stat-card">
+                        <h3>Average Performance</h3>
+                        <p id="classAverage">0%</p>
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- Subject Selection -->
+            <section id="subjects" class="dashboard-section">
+
+                <div class="section-title">
+                    <h2>My Subjects</h2>
+                    <p>Select an assigned subject to access its student records.</p>
+                </div>
+
+                <div class="dashboard-panel">
+
+                    <h3>Curriculum Filter</h3>
+
+                    <div class="form-group">
+
+                        <label for="subjectSelect">
+                            Select Subject
+                        </label>
+
+                        <select id="subjectSelect">
+                            <option value="">Choose a subject</option>
+                        </select>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="studentSelect">
+                            Select Student
+                        </label>
+
+                        <select id="studentSelect" disabled>
+                            <option value="">Select a subject first</option>
+                        </select>
+
+                    </div>
+
+                    <p id="subjectMessage" role="status"></p>
+
+                </div>
+
+            </section>
+
+
+            <!-- Grade Management -->
+            <section id="grades" class="dashboard-section">
+
+                <div class="section-title">
+                    <h2>Grade Management</h2>
+                    <p>Enter and manage student assessment scores.</p>
+                </div>
+
+                <div class="dashboard-panel">
+
+                    <h3>Assessment Entry</h3>
+
+                    <form id="gradeForm">
+
+                        <div class="dashboard-form-grid">
+
+                            <div class="form-group">
+
+                                <label for="gradeAssessment">
+                                    Assessment Type
+                                </label>
+
+                                <select id="gradeAssessment" required>
+
+                                    <option value="">Select Assessment</option>
+                                    <option value="Test">Test</option>
+                                    <option value="Quiz">Quiz</option>
+                                    <option value="Assignment">Assignment</option>
+                                    <option value="Midterm">Midterm</option>
+                                    <option value="Final Exam">Final Exam</option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="gradeScore">
+                                    Student Score
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="gradeScore"
+                                    min="0"
+                                    required
+                                    placeholder="Enter score"
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="maxScore">
+                                    Maximum Score
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="maxScore"
+                                    min="1"
+                                    value="100"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="gradeTerm">
+                                    Academic Term
+                                </label>
+
+                                <select id="gradeTerm" required>
+
+                                    <option value="">Select Term</option>
+                                    <option value="Semester 1">Semester 1</option>
+                                    <option value="Semester 2">Semester 2</option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <button type="submit" class="dashboard-button">
+                            Save Grade
+                        </button>
+
+                        <p id="gradeMessage" role="status"></p>
+
+                    </form>
+
+                </div>
+
+
+                <!-- Grade Records -->
+                <div class="dashboard-panel">
+
+                    <h3>Academic Records</h3>
+
+                    <div class="table-wrapper">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>Student ID</th>
+                                    <th>Subject</th>
+                                    <th>Assessment</th>
+                                    <th>Score</th>
+                                    <th>Term</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="teacherGradeTable">
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Report Cards -->
+            <section id="reports" class="dashboard-section">
+
+                <div class="section-title">
+                    <h2>Report Card Generator</h2>
+                    <p>Generate academic performance summaries for individual students.</p>
+                </div>
+
+                <div class="dashboard-panel">
+
+                    <h3>Student Report Card</h3>
+
+                    <button
+                        type="button"
+                        id="generateReport"
+                        class="dashboard-button"
+                    >
+                        Generate Report Card
+                    </button>
+
+                    <div id="reportCard" class="report-card">
+
+                        <p>Select a student and generate a report card.</p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="../js/storage.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/teacher.js"></script>
+
+</body>
+
+</html>

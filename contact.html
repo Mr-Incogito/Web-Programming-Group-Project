@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Knox College | School Portal</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <!-- Website Header -->
+    <header class="site-header">
+
+        <div class="logo">
+            <h2>Knox College</h2>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html">Portal Login</a>
+        </nav>
+
+    </header>
+
+
+    <!-- Contact Hero Section -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>Contact Us</h1>
+
+            <p>
+                Get in touch with Knox College for enquiries
+                and general information.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact Information -->
+    <section class="intro-section">
+
+        <div class="container">
+
+            <h2>Get In Touch</h2>
+
+            <p>
+                We welcome enquiries from students, parents,
+                guardians and members of the wider community.
+                Please use the contact information below
+                or send us a message through the form.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact Details and Form -->
+    <section class="features-section">
+
+        <div class="container">
+
+            <h2>Contact Information</h2>
+
+            <div class="features-grid">
+
+                <div class="feature-card">
+
+                    <h3>School Location</h3>
+
+                    <p>
+                        Knox College<br>
+                        Spaldings, Clarendon<br>
+                        Jamaica
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <h3>General Enquiries</h3>
+
+                    <p>
+                        Contact the school's administration
+                        for general questions and assistance.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <h3>School Portal</h3>
+
+                    <p>
+                        Students and authorized users can
+                        access the online portal to view
+                        relevant school information.
+                    </p>
+
+                    <a href="login.html">Access Portal</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact Form -->
+    <section class="intro-section">
+
+        <div class="container">
+
+            <h2>Send Us a Message</h2>
+
+            <form id="contactForm">
+
+                <div class="form-group">
+
+                    <label for="contactName">Full Name</label>
+
+                    <input
+                        type="text"
+                        id="contactName"
+                        placeholder="Enter your full name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="contactEmail">Email Address</label>
+
+                    <input
+                        type="email"
+                        id="contactEmail"
+                        placeholder="Enter your email address"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="contactSubject">Subject</label>
+
+                    <input
+                        type="text"
+                        id="contactSubject"
+                        placeholder="Enter message subject"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="contactMessage">Message</label>
+
+                    <textarea
+                        id="contactMessage"
+                        rows="5"
+                        placeholder="Write your message here..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <button type="submit" class="dashboard-button">
+                    Send Message
+                </button>
+
+                <p id="contactFeedback"></p>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <p>
+            &copy; 2026 Knox College School Portal.
+            All Rights Reserved.
+        </p>
+
+        <p>
+            Spaldings, Clarendon, Jamaica.
+        </p>
+
+    </footer>
+
+
+    <!-- Contact Form Demonstration -->
+    <script>
+
+        document.getElementById("contactForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+                document.getElementById("contactFeedback")
+                    .textContent =
+                    "Thank you for your message. This demonstration form does not send messages to the school.";
+
+                this.reset();
+
+            });
+
+    </script>
+
+</body>
+
+</html>

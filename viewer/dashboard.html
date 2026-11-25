@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Knox College | Viewer Dashboard</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+
+<body class="dashboard-page">
+
+    <!-- Dashboard Header -->
+    <header class="dashboard-header">
+
+        <div class="dashboard-brand">
+            <h2>Knox College</h2>
+            <span>School Portal</span>
+        </div>
+
+        <div class="dashboard-user">
+            <span>General Authorized User</span>
+            <button onclick="logoutUser()">Logout</button>
+        </div>
+
+    </header>
+
+    <!-- Dashboard Layout -->
+    <div class="dashboard-layout">
+
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+
+            <h3>Viewer Panel</h3>
+
+            <nav>
+                <a href="#overview" class="active">Dashboard Overview</a>
+                <a href="#student-search">Student Profiles</a>
+                <a href="#academic-records">Academic Records</a>
+                <a href="#financial-records">Financial Statements</a>
+            </nav>
+
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+
+            <!-- Overview -->
+            <section id="overview">
+
+                <div class="page-heading">
+                    <span>GENERAL ACCESS PANEL</span>
+                    <h1>Viewer Dashboard</h1>
+                    <p>
+                        View student profiles, academic performance
+                        and financial information.
+                    </p>
+                </div>
+
+                <!-- Statistics -->
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+                        <p>Registered Students</p>
+                        <h2 id="viewerTotalStudents">0</h2>
+                    </div>
+
+                    <div class="stat-card">
+                        <p>Academic Records</p>
+                        <h2 id="viewerTotalGrades">0</h2>
+                    </div>
+
+                    <div class="stat-card">
+                        <p>Financial Records</p>
+                        <h2 id="viewerTotalFees">0</h2>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- Student Search -->
+            <section id="student-search" class="dashboard-section">
+
+                <div class="section-heading">
+                    <h2>Student Profiles</h2>
+                    <p>Search for registered student information.</p>
+                </div>
+
+                <div class="dashboard-card">
+
+                    <h3>Student Search</h3>
+
+                    <div class="form-group">
+
+                        <label for="studentSearch">
+                            Search by Student Name or ID
+                        </label>
+
+                        <input
+                            type="text"
+                            id="studentSearch"
+                            placeholder="Enter student name or ID..."
+                        >
+
+                    </div>
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>Student ID</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Gender</th>
+                                    <th>Class</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="viewerStudentTable">
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                    <p id="studentSearchMessage"></p>
+
+                </div>
+
+            </section>
+
+            <!-- Academic Records -->
+            <section id="academic-records" class="dashboard-section">
+
+                <div class="section-heading">
+                    <h2>Academic Records</h2>
+                    <p>View student grades and assessment results.</p>
+                </div>
+
+                <div class="dashboard-card">
+
+                    <h3>Academic Performance</h3>
+
+                    <div class="form-group">
+
+                        <label for="academicStudentSelect">
+                            Select Student
+                        </label>
+
+                        <select id="academicStudentSelect">
+
+                            <option value="">
+                                Select a student
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>Subject</th>
+                                    <th>Assessment</th>
+                                    <th>Score</th>
+                                    <th>Percentage</th>
+                                    <th>Term</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="viewerGradeTable">
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                    <p id="academicMessage"></p>
+
+                </div>
+
+            </section>
+
+            <!-- Financial Records -->
+            <section id="financial-records" class="dashboard-section">
+
+                <div class="section-heading">
+                    <h2>Financial Statements</h2>
+                    <p>
+                        View student financial information and payment status.
+                    </p>
+                </div>
+
+                <div class="dashboard-card">
+
+                    <h3>Student Financial Information</h3>
+
+                    <div class="form-group">
+
+                        <label for="financialStudentSelect">
+                            Select Student
+                        </label>
+
+                        <select id="financialStudentSelect">
+
+                            <option value="">
+                                Select a student
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>Student ID</th>
+                                    <th>Amount Due</th>
+                                    <th>Amount Paid</th>
+                                    <th>Balance</th>
+                                    <th>Payment Status</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="viewerFinanceTable">
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                    <p id="financialMessage"></p>
+
+                </div>
+
+            </section>
+
+            <!-- Read-only Notice -->
+            <section class="dashboard-card">
+
+                <h3>Read-Only Access</h3>
+
+                <p>
+                    This account is authorized for viewing purposes only.
+                    Student records, academic grades and financial
+                    information cannot be modified through this account.
+                </p>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="../js/storage.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/viewer.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,337 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Administrator Dashboard | Knox College</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body class="dashboard-page">
+
+    <!--
+        Group Members:
+        Add all group members' names, IDs and lab times here.
+    -->
+
+    <header class="dashboard-header">
+        <div class="dashboard-brand">
+            KNOX <span>COLLEGE</span>
+        </div>
+
+        <div class="dashboard-user">
+            <span id="welcomeUser">Administrator</span>
+            <button onclick="logoutUser()">Logout</button>
+        </div>
+    </header>
+
+    <div class="dashboard-layout">
+
+        <aside class="dashboard-sidebar">
+            <h3>Administration</h3>
+
+            <nav>
+                <a href="#overview" class="sidebar-link active">
+                    Dashboard Overview
+                </a>
+
+                <a href="#students" class="sidebar-link">
+                    Student Registry
+                </a>
+
+                <a href="#grades" class="sidebar-link">
+                    Academic Records
+                </a>
+
+                <a href="#finance" class="sidebar-link">
+                    Financial Ledger
+                </a>
+            </nav>
+        </aside>
+
+        <main class="dashboard-content">
+
+            <!-- Dashboard Overview -->
+            <section id="overview">
+
+                <div class="dashboard-heading">
+                    <div>
+                        <p>ADMINISTRATION PANEL</p>
+                        <h1>Dashboard Overview</h1>
+                        <span>Welcome to Knox College administration.</span>
+                    </div>
+                </div>
+
+                <div class="stats-container">
+
+                    <article class="stat-card">
+                        <h3>Total Students</h3>
+                        <p id="totalStudents">0</p>
+                    </article>
+
+                    <article class="stat-card">
+                        <h3>Registered Users</h3>
+                        <p id="totalUsers">0</p>
+                    </article>
+
+                    <article class="stat-card">
+                        <h3>Total Grade Records</h3>
+                        <p id="totalGrades">0</p>
+                    </article>
+
+                    <article class="stat-card">
+                        <h3>Outstanding Fees</h3>
+                        <p id="outstandingFees">0</p>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- Student Registry -->
+            <section id="students" class="dashboard-section">
+
+                <div class="section-title">
+                    <h2>Student Registry</h2>
+                    <p>Register and manage student information.</p>
+                </div>
+
+                <div class="dashboard-panel">
+
+                    <h3>Register New Student</h3>
+
+                    <form id="studentForm">
+
+                        <div class="dashboard-form-grid">
+
+                            <div class="form-group">
+                                <label for="studentId">Student ID</label>
+                                <input type="text" id="studentId"
+                                       placeholder="e.g. KC004" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="gender">Gender</label>
+                                <select id="gender" required>
+                                    <option value="">Select Gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="className">Class</label>
+                                <select id="className" required>
+                                    <option value="">Select Class</option>
+                                    <option value="Grade 7">Grade 7</option>
+                                    <option value="Grade 8">Grade 8</option>
+                                    <option value="Grade 9">Grade 9</option>
+                                    <option value="Grade 10">Grade 10</option>
+                                    <option value="Grade 11">Grade 11</option>
+                                    <option value="Grade 12">Grade 12</option>
+                                    <option value="Grade 13">Grade 13</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="semester">Semester</label>
+                                <select id="semester" required>
+                                    <option value="">Select Semester</option>
+                                    <option value="Semester 1">Semester 1</option>
+                                    <option value="Semester 2">Semester 2</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="parentContact">Parent Contact</label>
+                                <input type="tel" id="parentContact"
+                                       placeholder="876-555-0100" required>
+                            </div>
+
+                        </div>
+
+                        <button type="submit" class="dashboard-button">
+                            Register Student
+                        </button>
+
+                        <p id="studentMessage" role="status"></p>
+
+                    </form>
+
+                </div>
+
+                <div class="dashboard-panel">
+
+                    <h3>Registered Students</h3>
+
+                    <input type="search"
+                           id="studentSearch"
+                           placeholder="Search students...">
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Student ID</th>
+                                    <th>Name</th>
+                                    <th>Class</th>
+                                    <th>Semester</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="studentTableBody"></tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- Academic Records -->
+            <section id="grades" class="dashboard-section">
+
+                <div class="section-title">
+                    <h2>Academic Records</h2>
+                    <p>View student academic performance.</p>
+                </div>
+
+                <div class="dashboard-panel">
+
+                    <h3>Grade Records</h3>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Student ID</th>
+                                    <th>Subject</th>
+                                    <th>Assessment</th>
+                                    <th>Score</th>
+                                    <th>Term</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="gradeTableBody"></tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- Financial Ledger -->
+            <section id="finance" class="dashboard-section">
+
+                <div class="section-title">
+                    <h2>Financial Ledger</h2>
+                    <p>Monitor tuition payments and outstanding balances.</p>
+                </div>
+
+                <!-- Record Payment Form -->
+                <div class="dashboard-panel">
+
+                    <h3>Record Student Payment</h3>
+
+                    <p>
+                        Select a student and enter the amount received
+                        to update their financial records.
+                    </p>
+
+                    <form id="paymentForm">
+
+                        <div class="dashboard-form-grid">
+
+                            <div class="form-group">
+                                <label for="paymentStudent">
+                                    Select Student
+                                </label>
+
+                                <select id="paymentStudent" required>
+                                    <option value="">Select a student</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="paymentAmount">
+                                    Payment Amount (JMD)
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="paymentAmount"
+                                    min="1"
+                                    step="0.01"
+                                    placeholder="Enter amount paid"
+                                    required
+                                >
+                            </div>
+
+                        </div>
+
+                        <p id="paymentBalance">
+                            Select a student to view their outstanding balance.
+                        </p>
+
+                        <button type="submit" class="dashboard-button">
+                            Record Payment
+                        </button>
+
+                        <p id="paymentMessage" role="status"></p>
+
+                    </form>
+
+                </div>
+
+                <!-- Financial Records Table -->
+                <div class="dashboard-panel">
+
+                    <h3>Student Financial Records</h3>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Student ID</th>
+                                    <th>Tuition</th>
+                                    <th>Amount Paid</th>
+                                    <th>Balance</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="financeTableBody"></tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script src="../js/storage.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/admin.js"></script>
+
+</body>
+</html>

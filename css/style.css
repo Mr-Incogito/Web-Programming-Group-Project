@@ -1,0 +1,803 @@
+
+/* =========================================
+   KNOX COLLEGE SCHOOL PORTAL
+   Main Stylesheet
+   ========================================= */
+
+
+/* 1. GLOBAL RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f7fa;
+    color: #252b35;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* 2. COLOUR VARIABLES */
+
+:root {
+    --primary-color: #102b50;
+    --secondary-color: #b51f35;
+    --accent-color: #e6b84c;
+    --light-color: #ffffff;
+    --background-color: #f5f7fa;
+    --text-color: #252b35;
+}
+
+
+/* 3. WEBSITE HEADER */
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 7%;
+    background-color: var(--light-color);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo h2 {
+    color: var(--primary-color);
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.logo h2 span {
+    color: var(--secondary-color);
+}
+
+.logo p {
+    font-size: 11px;
+    color: #666;
+    letter-spacing: 0.5px;
+}
+
+
+/* 4. NAVIGATION BAR */
+
+.navbar ul {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+}
+
+.navbar a {
+    color: var(--primary-color);
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--secondary-color);
+}
+
+.navbar .login-btn {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 11px 22px;
+    border-radius: 5px;
+}
+
+.navbar .login-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+
+/* 5. HERO SECTION */
+
+.hero {
+    min-height: 550px;
+    display: flex;
+    align-items: center;
+    padding: 80px 10%;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(10, 31, 59, 0.96),
+            rgba(10, 31, 59, 0.70)
+        ),
+        url("../assets/images/school-campus.jpg");
+
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.welcome-text {
+    color: var(--accent-color);
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 60px;
+    line-height: 1.2;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.hero h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.hero-content > p:not(.welcome-text) {
+    font-size: 16px;
+    max-width: 520px;
+    margin-bottom: 30px;
+    color: #e1e6ed;
+}
+
+.hero-btn {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.hero-btn:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+
+/* 6. INTRODUCTION SECTION */
+
+.introduction {
+    padding: 80px 10%;
+    text-align: center;
+    background-color: white;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-heading h2 {
+    color: var(--primary-color);
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.section-heading p {
+    color: #777;
+    font-size: 15px;
+}
+
+.intro-content {
+    max-width: 850px;
+    margin: auto;
+}
+
+.intro-content p {
+    margin-bottom: 18px;
+    font-size: 16px;
+    color: #555;
+}
+
+
+/* 7. PORTAL FEATURES */
+
+.portal-section {
+    padding: 80px 7%;
+    background-color: var(--background-color);
+}
+
+.portal-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.portal-card {
+    background-color: white;
+    padding: 35px 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+    border-bottom: 4px solid var(--secondary-color);
+    transition: 0.3s ease;
+}
+
+.portal-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.portal-card h3 {
+    color: var(--primary-color);
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.portal-card p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 22px;
+}
+
+.portal-card a {
+    display: inline-block;
+    color: var(--secondary-color);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.portal-card a:hover {
+    color: var(--primary-color);
+}
+
+
+/* 8. SCHOOL MOTTO SECTION */
+
+.motto-section {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 65px 20px;
+}
+
+.motto-section h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.motto-section p {
+    font-size: 25px;
+    color: var(--accent-color);
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-style: italic;
+}
+
+.motto-section span {
+    font-size: 14px;
+    color: #e0e6ef;
+}
+
+
+/* 9. WEBSITE FOOTER */
+
+.main-footer {
+    background-color: #091a30;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.footer-content h3 {
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+.footer-content p {
+    font-size: 14px;
+    color: #c5ced9;
+    margin-bottom: 7px;
+}
+
+.copyright {
+    margin-top: 25px;
+    font-size: 12px !important;
+    border-top: 1px solid #34465d;
+    padding-top: 18px;
+}
+
+/* =========================================
+   KNOX COLLEGE LOGIN PAGE
+   ========================================= */
+
+.login-page {
+    min-height: 100vh;
+    background: linear-gradient(
+        135deg,
+        #102b50,
+        #1b416e
+    );
+}
+
+.login-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 8%;
+    background: white;
+}
+
+.login-brand {
+    font-size: 25px;
+    font-weight: 800;
+    color: var(--primary-color);
+}
+
+.login-brand span {
+    color: var(--secondary-color);
+}
+
+.back-home {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.login-main {
+    min-height: calc(100vh - 75px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 45px 20px;
+}
+
+.login-container {
+    background: white;
+    width: 100%;
+    max-width: 450px;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.login-heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-heading h1 {
+    color: var(--primary-color);
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.login-heading p {
+    color: #777;
+    font-size: 14px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d5dce5;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(181, 31, 53, 0.1);
+}
+
+.login-submit {
+    width: 100%;
+    padding: 14px;
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-submit:hover {
+    background: var(--primary-color);
+}
+
+.login-message {
+    margin-bottom: 15px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.login-message.success {
+    color: green;
+}
+
+.login-message.error {
+    color: #c62828;
+}
+
+.demo-credentials {
+    margin-top: 30px;
+    padding: 18px;
+    background: #f2f5f9;
+    border-radius: 7px;
+}
+
+.demo-credentials h3 {
+    color: var(--primary-color);
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+.demo-credentials p {
+    font-size: 12px;
+    margin-bottom: 7px;
+    color: #555;
+}
+
+.login-footer {
+    text-align: center;
+    margin-top: 25px;
+    color: #888;
+    font-size: 12px;
+}
+
+
+/* LOGIN PAGE MOBILE RESPONSIVENESS */
+
+@media screen and (max-width: 480px) {
+
+    .login-container {
+        padding: 28px 22px;
+    }
+
+    .login-heading h1 {
+        font-size: 25px;
+    }
+
+    .login-header {
+        padding: 18px 5%;
+    }
+
+    .login-brand {
+        font-size: 20px;
+    }
+
+}
+
+/* =========================================
+   KNOX COLLEGE - PUBLIC PAGE IMPROVEMENTS
+   Applies to Home, About and Contact pages
+========================================= */
+
+body:not(.dashboard-page) {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #263449;
+    background: #f4f6fa;
+}
+
+body:not(.dashboard-page) * {
+    box-sizing: border-box;
+}
+
+/* HEADER AND NAVIGATION */
+
+body:not(.dashboard-page) > header {
+    min-height: 76px;
+    padding: 14px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    background: #ffffff;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+    position: relative;
+    z-index: 10;
+}
+
+body:not(.dashboard-page) > header h1,
+body:not(.dashboard-page) > header .logo,
+body:not(.dashboard-page) > header .site-logo {
+    color: #102b50;
+    font-size: 1.65rem;
+    font-weight: 800;
+    margin: 0;
+}
+
+body:not(.dashboard-page) > header nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    flex-wrap: wrap;
+}
+
+body:not(.dashboard-page) > header nav a {
+    color: #263449;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+body:not(.dashboard-page) > header nav a:hover {
+    color: #b51f35;
+}
+
+/* PAGE HERO */
+
+body:not(.dashboard-page) .hero,
+body:not(.dashboard-page) .page-hero,
+body:not(.dashboard-page) .about-hero,
+body:not(.dashboard-page) .contact-hero {
+    min-height: 330px;
+    padding: 75px 8%;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(120deg, #102b50, #52657e);
+    color: #ffffff;
+}
+
+body:not(.dashboard-page) .hero h1,
+body:not(.dashboard-page) .page-hero h1,
+body:not(.dashboard-page) .about-hero h1,
+body:not(.dashboard-page) .contact-hero h1 {
+    max-width: 650px;
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    line-height: 1.15;
+    margin: 0 0 15px;
+    color: #ffffff;
+}
+
+body:not(.dashboard-page) .hero p,
+body:not(.dashboard-page) .page-hero p,
+body:not(.dashboard-page) .about-hero p,
+body:not(.dashboard-page) .contact-hero p {
+    max-width: 650px;
+    font-size: 1.05rem;
+    color: #e8edf5;
+}
+
+/* MAIN CONTENT AND SECTIONS */
+
+body:not(.dashboard-page) main,
+body:not(.dashboard-page) .main-content {
+    width: min(1120px, 88%);
+    margin: 0 auto;
+}
+
+body:not(.dashboard-page) main section,
+body:not(.dashboard-page) .content-section {
+    padding: 55px 0;
+}
+
+body:not(.dashboard-page) h2 {
+    color: #102b50;
+    font-size: 1.9rem;
+    margin: 0 0 18px;
+}
+
+body:not(.dashboard-page) h3 {
+    color: #102b50;
+    font-size: 1.2rem;
+    margin: 0 0 8px;
+}
+
+body:not(.dashboard-page) p {
+    margin: 0 0 15px;
+}
+
+/* CONTENT CARDS */
+
+body:not(.dashboard-page) .feature-card,
+body:not(.dashboard-page) .info-card,
+body:not(.dashboard-page) .content-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #e5eaf1;
+    box-shadow: 0 5px 18px rgba(16, 43, 80, 0.06);
+    margin-bottom: 20px;
+}
+
+/* ABOUT PAGE CONTENT */
+
+body:not(.dashboard-page) .about-content,
+body:not(.dashboard-page) .about-section {
+    padding: 45px 0;
+}
+
+body:not(.dashboard-page) .about-content > div,
+body:not(.dashboard-page) .about-section > div {
+    margin-bottom: 25px;
+}
+
+/* CONTACT PAGE */
+
+body:not(.dashboard-page) .contact-container,
+body:not(.dashboard-page) .contact-content {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 35px;
+    align-items: start;
+    padding: 45px 0;
+}
+
+body:not(.dashboard-page) form {
+    width: 100%;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(16, 43, 80, 0.08);
+}
+
+body:not(.dashboard-page) form label {
+    display: block;
+    margin: 14px 0 6px;
+    font-weight: 600;
+    color: #263449;
+}
+
+body:not(.dashboard-page) form input,
+body:not(.dashboard-page) form textarea,
+body:not(.dashboard-page) form select {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #d5dce6;
+    border-radius: 7px;
+    background: #ffffff;
+    font: inherit;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+}
+
+body:not(.dashboard-page) form textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+body:not(.dashboard-page) form input:focus,
+body:not(.dashboard-page) form textarea:focus {
+    outline: none;
+    border-color: #b51f35;
+    box-shadow: 0 0 0 3px rgba(181, 31, 53, 0.1);
+}
+
+body:not(.dashboard-page) form button,
+body:not(.dashboard-page) form input[type="submit"] {
+    width: auto;
+    min-width: 150px;
+    margin-top: 12px;
+    padding: 13px 25px;
+    border: none;
+    border-radius: 7px;
+    background: #b51f35;
+    color: #ffffff;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+body:not(.dashboard-page) form button:hover,
+body:not(.dashboard-page) form input[type="submit"]:hover {
+    background: #8f1729;
+}
+
+/* SCHOOL MOTTO */
+
+body:not(.dashboard-page) .motto,
+body:not(.dashboard-page) .motto-section {
+    padding: 55px 8%;
+    text-align: center;
+    background: #102b50;
+    color: #ffffff;
+}
+
+body:not(.dashboard-page) .motto h2,
+body:not(.dashboard-page) .motto-section h2 {
+    color: #ffffff;
+}
+
+body:not(.dashboard-page) .motto p,
+body:not(.dashboard-page) .motto-section p {
+    color: #ffffff;
+}
+
+body:not(.dashboard-page) .motto strong,
+body:not(.dashboard-page) .motto-section strong {
+    color: #f2bd4b;
+    font-size: 1.3rem;
+}
+
+/* FOOTER */
+
+body:not(.dashboard-page) > footer {
+    padding: 25px 7%;
+    background: #0b1e37;
+    color: #dce4ef;
+    text-align: center;
+}
+
+body:not(.dashboard-page) > footer p {
+    margin: 4px 0;
+    font-size: 0.9rem;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 768px) {
+    body:not(.dashboard-page) > header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    body:not(.dashboard-page) > header nav {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    body:not(.dashboard-page) .hero,
+    body:not(.dashboard-page) .page-hero,
+    body:not(.dashboard-page) .about-hero,
+    body:not(.dashboard-page) .contact-hero {
+        min-height: 260px;
+        padding: 55px 7%;
+    }
+
+    body:not(.dashboard-page) .contact-container,
+    body:not(.dashboard-page) .contact-content {
+        grid-template-columns: 1fr;
+    }
+
+    body:not(.dashboard-page) main,
+    body:not(.dashboard-page) .main-content {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    body:not(.dashboard-page) > header nav {
+        gap: 10px;
+    }
+
+    body:not(.dashboard-page) > header nav a {
+        font-size: 0.85rem;
+    }
+
+    body:not(.dashboard-page) form {
+        padding: 20px;
+    }
+}

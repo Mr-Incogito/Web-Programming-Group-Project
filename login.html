@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portal Login | Knox College</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body class="login-page">
+
+    <!-- Login Header -->
+    <header class="login-header">
+
+        <a href="index.html" class="login-brand">
+            KNOX <span>COLLEGE</span>
+        </a>
+
+        <a href="index.html" class="back-home">
+            Back to Home
+        </a>
+
+    </header>
+
+
+    <!-- Login Main Section -->
+    <main class="login-main">
+
+        <section class="login-container">
+
+            <div class="login-heading">
+
+                <h1>Welcome Back</h1>
+
+                <p>
+                    Sign in to access the Knox College School Portal.
+                </p>
+
+            </div>
+
+
+            <!-- Login Form -->
+            <form id="loginForm">
+
+                <div class="form-group">
+
+                    <label for="username">Username</label>
+
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder="Enter your username"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="password">Password</label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your password"
+                        required
+                    >
+
+                </div>
+
+
+                <p id="loginMessage" class="login-message"
+                   role="alert" aria-live="polite"></p>
+
+
+                <button type="submit" class="login-submit">
+                    Sign In
+                </button>
+
+            </form>
+
+
+            <!-- Demonstration Credentials -->
+            <div class="demo-credentials">
+
+                <h3>Demo Access Accounts</h3>
+
+                <p><strong>Administrator:</strong> admin / admin123</p>
+
+                <p><strong>Teacher:</strong> teacher / teacher123</p>
+
+                <p><strong>Viewer:</strong> viewer / viewer123</p>
+
+            </div>
+
+
+            <div class="login-footer">
+
+                <p>
+                    Knox College | Spaldings, Clarendon
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- JavaScript Files -->
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+
+    <script>
+
+        // Select the login form
+        const loginForm = document.getElementById("loginForm");
+
+        // Select the message element
+        const loginMessage = document.getElementById("loginMessage");
+
+
+        // Listen for form submission
+        loginForm.addEventListener("submit", function(event) {
+
+            // Prevent the page from refreshing
+            event.preventDefault();
+
+
+            // Retrieve input values
+            const username = document.getElementById("username").value.trim();
+
+            const password = document.getElementById("password").value;
+
+
+            // Authenticate user
+            const result = loginUser(username, password);
+
+
+            // Check login result
+            if (result.success) {
+
+                loginMessage.textContent = "Login successful! Redirecting...";
+
+                loginMessage.className = "login-message success";
+
+                // Redirect based on user role
+                redirectUser(result.user.role);
+
+            } else {
+
+                loginMessage.textContent = result.message;
+
+                loginMessage.className = "login-message error";
+
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>

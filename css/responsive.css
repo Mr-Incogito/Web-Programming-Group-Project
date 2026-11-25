@@ -1,0 +1,204 @@
+
+/* =========================================
+   KNOX COLLEGE SCHOOL PORTAL
+   Responsive Stylesheet
+   ========================================= */
+
+
+/* TABLETS AND SMALL LAPTOPS */
+
+@media screen and (max-width: 1024px) {
+
+    .main-header {
+        padding: 18px 4%;
+    }
+
+    .navbar ul {
+        gap: 18px;
+    }
+
+    .hero {
+        padding: 70px 7%;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .portal-section {
+        padding: 65px 5%;
+    }
+
+    .portal-container {
+        gap: 18px;
+    }
+
+}
+
+
+/* TABLETS AND LARGE PHONES */
+
+@media screen and (max-width: 768px) {
+
+    /* Header */
+
+    .main-header {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .logo {
+        text-align: center;
+    }
+
+    .navbar {
+        width: 100%;
+    }
+
+    .navbar ul {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    /* Hero */
+
+    .hero {
+        min-height: 450px;
+        padding: 60px 7%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero h2 {
+        font-size: 21px;
+    }
+
+    .hero-content > p:not(.welcome-text) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Introduction */
+
+    .introduction {
+        padding: 60px 7%;
+    }
+
+    .section-heading h2 {
+        font-size: 27px;
+    }
+
+    /* Portal Cards */
+
+    .portal-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .portal-card {
+        padding: 25px 20px;
+    }
+
+}
+
+
+/* MOBILE PHONES */
+
+@media screen and (max-width: 480px) {
+
+    /* Header */
+
+    .logo h2 {
+        font-size: 23px;
+    }
+
+    .navbar ul {
+        gap: 12px;
+    }
+
+    .navbar a {
+        font-size: 12px;
+    }
+
+    .navbar .login-btn {
+        padding: 9px 13px;
+    }
+
+    /* Hero */
+
+    .hero {
+        min-height: 400px;
+        padding: 50px 6%;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero h2 {
+        font-size: 18px;
+    }
+
+    .hero-content > p:not(.welcome-text) {
+        font-size: 14px;
+    }
+
+    .welcome-text {
+        font-size: 12px;
+        letter-spacing: 3px;
+    }
+
+    /* Introduction */
+
+    .introduction {
+        padding: 45px 6%;
+    }
+
+    .section-heading h2 {
+        font-size: 23px;
+    }
+
+    .intro-content p {
+        font-size: 14px;
+    }
+
+    /* Portal Cards */
+
+    .portal-section {
+        padding: 50px 6%;
+    }
+
+    .portal-container {
+        grid-template-columns: 1fr;
+    }
+
+    .portal-card {
+        padding: 28px 22px;
+    }
+
+    /* Motto */
+
+    .motto-section {
+        padding: 50px 15px;
+    }
+
+    .motto-section p {
+        font-size: 20px;
+    }
+
+    .motto-section span {
+        font-size: 12px;
+    }
+
+    /* Footer */
+
+    .main-footer {
+        padding: 35px 15px;
+    }
+
+}
